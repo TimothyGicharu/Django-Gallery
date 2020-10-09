@@ -1,3 +1,7 @@
 virtual/
 *.pyc
-.env
+.env/
+start.sh
+.vscode
+
+__pycache__/

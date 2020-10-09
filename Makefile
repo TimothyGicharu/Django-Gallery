@@ -1,11 +1,11 @@
 runserver:
-	python3 manage.py runserver
+	./manage.py runserver
 
 migrations:
-	python3 manage.py makemigrations $(app)
+	./manage.py makemigrations $(app)
 
 migrate:
-	python3 manage.py migrate
+	./manage.py migrate
 
 start:
 	django-admin startapp $(name)
