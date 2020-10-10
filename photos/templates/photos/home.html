@@ -1,5 +1,28 @@
 {% extends 'photos/base.html' %}
 
-{% block content %}
-<h1 class="text-center">Welcome to my Gallery</h1>
+{% block style %}
 {% endblock %}
+
+{% block content %}
+<h2 class="text-center text-primary">
+    Welcome to the Gallery
+</h2>
+    {% if images %}
+        <div class="container">
+            <div class="row">
+                {% for image in images %}
+                <div class="col-md-4">
+                    <p>{{ image.name }}</p>
+                    <img src="{{image.image.url}}" alt="{{image.name}}" height="250" width="100%" title="{{image.name}}">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+
+
+
+
+<h1 class="text-center">Welcome to my Gallery</h1>
