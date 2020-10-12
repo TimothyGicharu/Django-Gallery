@@ -10,7 +10,6 @@ class Image(models.Model):
     image = CloudinaryField('image')
 
     
-
     def save_image(self):
         self.save()
 
@@ -19,6 +18,11 @@ class Image(models.Model):
 
     def update_image(self):
         self.update()
+
+    @classmethod
+    def search_by_category(cls, search_word):
+        images = cls.objects.filter(category__name__icontains=search_word)
+        return images
 
     class Meta:
         verbose_name = 'Image'
@@ -40,6 +44,9 @@ class Location(models.Model):
     def update_location():
         pass
 
+    def __str__(self):
+        return self.name
+
 class Category(models.Model):
     category = models.CharField(max_length=30)
 
@@ -51,3 +58,6 @@ class Category(models.Model):
 
     def update_category():
         pass
+
+    def __str__(self):
+        return self.category

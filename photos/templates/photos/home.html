@@ -11,10 +11,22 @@
         <div class="container">
             <div class="row">
                 {% for image in images %}
-                <div class="col-md-4">
+                <!-- <div class="col-md-4">
                     <p>{{ image.name }}</p>
+                    <p>{{ image.location}}</p>
                     <img src="{{image.image.url}}" alt="{{image.name}}" height="250" width="100%" title="{{image.name}}">
-                </div>
+                </div> -->
+                    <div class="col-sm-4">
+                      <div class="card mt-4 bg-light">
+                        <img src="{{image.image.url}}" alt="{{image.name}}" height="250" width="100%" title="{{image.name}}">
+                        <div class="card-body">
+                            <mark>{{ image.name }}</mark>
+                            <p>Location: <small>{{ image.location}}</small></p>
+                            <p>Category: <small>{{ image.category}}</small></p>
+                            <a href="#">Copy Link</a>
+                        </div>
+                      </div>
+                    </div>
                 {% endfor %}
             </div>
         </div>
@@ -22,7 +34,3 @@
 {% endblock %}
 
 
-
-
-
-<h1 class="text-center">Welcome to my Gallery</h1>
